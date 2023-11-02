@@ -3,6 +3,8 @@
 #include "Component.h"
 #include<iostream>
 #include "Resistor.h"
+#include "Capacitor.h"
+#include "Transistor.h"
 class ComponentFactory
 {
 
