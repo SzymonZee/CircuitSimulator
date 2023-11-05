@@ -4,9 +4,9 @@
 std::unique_ptr<Component> ComponentFactory::makeComponent(const std::string choice)
 {
 
-	if (choice == "Resitor")
+	if (choice == "Resistor")
 	{
-		std::cout << "Pass inizalization values for Resitor \t" << std::endl;
+		std::cout << "Pass inizalization values for Resistor \t" << std::endl;
 		std::cout << "1.resitance:" << std::endl;
 		long Resitance{};
 		std::cin >> Resitance;
@@ -18,7 +18,7 @@ std::unique_ptr<Component> ComponentFactory::makeComponent(const std::string cho
 		int SecondNode{};
 		std::cin >> SecondNode;
 		std::vector<int> NodeNumbers{ FirstNode, SecondNode };
-		return std::make_unique<Resistor>(Resitance, NodeNumbers);
+		return std::make_unique<Resistor>(Resitance);
 	}
 
 	if (choice == "Capacitor")
@@ -36,7 +36,7 @@ std::unique_ptr<Component> ComponentFactory::makeComponent(const std::string cho
 		std::cin >> SecondNode;
 		std::vector<int> NodeNumbers{ FirstNode, SecondNode };
 
-		return std::make_unique<Capacitor>(Capitance, NodeNumbers);
+		return std::make_unique<Capacitor>(Capitance);
 	}
 
 

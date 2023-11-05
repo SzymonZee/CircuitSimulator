@@ -3,47 +3,35 @@
 #include <vector>
 #include <memory>
 #include <iostream>
+#include <map>
 
 
 
 
-/*
-	struct EdgeProperties
-	{
-		std::unique_ptr<Component>s_Component; // Pointer to the component this edge represents
-	};
-	
-	typedef boost::adjacency_list<boost::vecS, boost::vecS, boost::undirectedS, boost::no_property, EdgeProperties> CircuitGraph;
-	typedef boost::graph_traits<CircuitGraph>::vertex_descriptor Vertex;
-	typedef boost::graph_traits<CircuitGraph>::edge_descriptor Edge;
-
-	CircuitGraph graph;
-	
-	std::map < std::pair<int, int>, Component>components;
-	std::map<int, graph::vertex_descriptor> vertexMap;
-	*/
 
 class Circuit
 {
 
-
+	//to do use map to map components from crcuit m_COmponentvector
 
 
 public:
  
 
 		void addComponent( std::unique_ptr<Component> component);
+		bool  compareNodes(std::unique_ptr<Component>& component)const;
 
-		//void  DisplayNetlist() const;
+		//delete after  overloading << operator in  Component class 
+		void nodesDisplay() const;
 
-	//	void performSimualtion( std::unique_ptr<SimulationBehaviour> m_simulation);
-		//std::ostream &operator<< (std::ostream& os, const Circuit& circuit);
-		//std::vector < std::unique_ptr<Component>> getComponentVector()const;
+		 
+		void mapComponents(const std::vector<std::unique_ptr<Component>>& components);
+	
+		std::vector < std::unique_ptr<Component>> m_Components{};
+	void createTopology(const std::vector < std::unique_ptr<Component>>&components);
+	std::vector <std::vector<int >> m_Nodes;
 
-	
-	std::vector < std::unique_ptr<Component>> m_Components;
-	
-	
+
 
 };
 

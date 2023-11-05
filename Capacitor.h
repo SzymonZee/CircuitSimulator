@@ -9,7 +9,7 @@ private:
 
 public:
 
-    Capacitor(long capitance, std::vector<int>component_nodes);
+    Capacitor(long capitance);
     void linarize(double operating_current) override;
     
 

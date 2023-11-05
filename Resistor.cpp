@@ -8,7 +8,7 @@ void Resistor::linarize(double operating_current)
 
 }
 
-Resistor::Resistor(reistance resitance, std::vector<int> component_nodes) :Component(component_nodes), m_Reistance{resitance}
+Resistor::Resistor(reistance resitance) :Component(), m_Reistance{resitance}
 {
 
 }

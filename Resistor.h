@@ -2,8 +2,8 @@
 #include <vector>
 #include"Component.h"
 
-class Resistor:
-	public Component 
+class Resistor :
+	public Component
 
 {
 private:
@@ -12,7 +12,7 @@ private:
 
 public:
 
-	Resistor(reistance resitance, std::vector<int> component_nodes);
+	Resistor(reistance resitance);
 	reistance getResitance();
 	void setResitance(reistance resitance);
 	void linarize(double operating_current) override;

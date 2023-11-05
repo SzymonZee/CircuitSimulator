@@ -12,14 +12,10 @@ int main()
     std::cin >> choice;
    auto component= std::move(C1.makeComponent(choice));
    CircuitBuilder circuitbuilder;
-
    //sprawdzenie dodawania elemntów do wektora
-   auto circuit = circuitbuilder.addComponenet(std::move(component)).buildCircuit();
-  auto postion= circuit->m_Components.at(0)->getComponentPostion();
-  for (auto& cordinates : postion)
-  {
-      std::cout << cordinates<<std::endl;
-  }
+   auto component_ = std::move(C1.makeComponent(choice));
+   auto circuit = circuitbuilder.addComponenet(std::move(component)).addComponenet(std::move(component_)).buildCircuit();
+  
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania

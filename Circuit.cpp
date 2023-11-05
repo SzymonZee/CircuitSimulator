@@ -3,17 +3,45 @@
 
 
 
-void  Circuit::addComponent( std::unique_ptr<Component> component)
-{ 
-    
-    
-    m_Components.push_back(std::move(component));
-    
-    
-    
-    
-    
-    
+void  Circuit::addComponent(std::unique_ptr<Component> component)
+{//function which checks if  componet wich we want to  pass to a vector  is valid meaining  it does not have same node cordinates
+    while (compareNodes(component) != true)
+    {
+        this->nodesDisplay();
+        component->setPosition(component->inputTwoIntegers());
+    }
+}
+
+
+
+bool Circuit::compareNodes(std::unique_ptr<Component>& component)const
+{
+    int count{};
+    for (const auto& compPtr : this->m_Components)
+    {
+        if (component->getComponentPosition() == compPtr->getComponentPosition())
+        {
+            ++count;
+        }
+    }
+    return count == 0; // returns true if no matches were found
+}
+
+
+// Displaying  nodes of componets aggrageted in cicrcuit
+void Circuit::nodesDisplay() const
+{
+ 
+    for (const auto& compPtr : this->m_Components)
+    {
+        auto vec = compPtr->getComponentPosition();
+        std::cout << vec[0];
+        std::cout << vec[1];
+    }
+}
+
+
+
     /*
     // Check if vertices for node1 and node2 already exist or create them
     Vertex v1 = add_vertex_if_not_exists(node1);
@@ -32,7 +60,8 @@ void  Circuit::addComponent( std::unique_ptr<Component> component)
     graph[e].s_Component = std::move(component);
 
     */
-}
+
+
 /*
 void Circuit::performSimualtion(std::unique_ptr<SimulationBehaviour> m_simulation)
 {
@@ -55,3 +84,39 @@ std::ostream& Circuit::operator<<(std::ostream& os, const Circuit& circuit)
 
 }
 */
+
+
+
+void Circuit::createTopology(const std::vector<std::unique_ptr<Component>>& components) {
+    // Assuming that m_Nodes is initially empty or correctly sized to match the number of components.
+    m_Nodes.resize(components.size());  // Ensure we have enough vectors to match components
+
+    for (size_t i = 0; i < components.size(); ++i) {
+        // Check if the component at the current index has a valid position
+        if (components[i]) {
+            const auto& componentPosition = components[i]->getComponentPosition();
+            // The position should correspond to an index in the m_Nodes vector
+            for (int pos : componentPosition) {
+                // Ensure the node index is within the bounds of m_Nodes
+                if (pos < m_Nodes.size()) {
+                    m_Nodes[pos].push_back(i); // Push the component index into the node's component list
+                }
+                else {
+                    std::cerr << "Node position " << pos << " is out of bounds." << std::endl;
+                }
+            }
+        }
+        else {
+            std::cerr << "Component " << i << " is a nullptr." << std::endl;
+        }
+    }
+}
+
+
+void Circuit::mapComponents(const std::vector<std::unique_ptr<Component>>& components)
+{
+    /*
+    auto iterator = components.begin();
+    for (auto& )
+    */
+}

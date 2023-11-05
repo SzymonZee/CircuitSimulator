@@ -2,7 +2,7 @@
 
 
 
-Capacitor::Capacitor(long capitance, std::vector<int>component_nodes) :Component(component_nodes ), m_Capitance{ capitance }
+Capacitor::Capacitor(long capitance) :Component( ), m_Capitance{ capitance }
 {
 
 }
