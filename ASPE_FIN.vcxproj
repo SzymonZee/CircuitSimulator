@@ -138,6 +138,7 @@
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="ComponentFactory.cpp" />
     <ClCompile Include="DCSimulation.cpp" />
+    <ClCompile Include="InputSignal.cpp" />
     <ClCompile Include="Resistor.cpp" />
     <ClCompile Include="SimulationBehaviour.cpp" />
     <ClCompile Include="TranSimulation.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="Component.h" />
     <ClInclude Include="ComponentFactory.h" />
     <ClInclude Include="DCSimulation.h" />
+    <ClInclude Include="InputSignal.h" />
     <ClInclude Include="Resistor.h" />
     <ClInclude Include="SimulationBehaviour.h" />
     <ClInclude Include="TranSimulation.h" />

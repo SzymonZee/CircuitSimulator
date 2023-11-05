@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include"Component.h"
-#include "Eigen/src/Core/ArrayBase.h"
 
 class Resistor:
 	public Component 

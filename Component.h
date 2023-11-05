@@ -4,7 +4,7 @@ class Component
 {
 public:
 	Component(std::vector<int> component_nodes);
-
+	virtual ~Component() = default;
 	std::vector<int> getComponentPostion();
 	std::vector<int>setPostion(std::vector<int> node_numbers);
 	virtual void linarize(double operating_current) = 0;

@@ -10,6 +10,7 @@ private:
 public:
 
     Capacitor(long capitance, std::vector<int>component_nodes);
+    void linarize(double operating_current) override;
     
 
 };

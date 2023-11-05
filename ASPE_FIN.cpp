@@ -2,10 +2,24 @@
 //
 
 #include <iostream>
-
+#include "ComponentFactory.h"
+#include "CircuitBuilder.h"
 int main()
 {
-    std::cout << "Hello World!\n";
+    ComponentFactory C1{};
+    std::string choice{};
+    std::cout << "Wybierz Komponent";
+    std::cin >> choice;
+   auto component= std::move(C1.makeComponent(choice));
+   CircuitBuilder circuitbuilder;
+
+   //sprawdzenie dodawania elemntów do wektora
+   auto circuit = circuitbuilder.addComponenet(std::move(component)).buildCircuit();
+  auto postion= circuit->m_Components.at(0)->getComponentPostion();
+  for (auto& cordinates : postion)
+  {
+      std::cout << cordinates<<std::endl;
+  }
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania

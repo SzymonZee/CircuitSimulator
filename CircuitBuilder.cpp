@@ -1,10 +1,14 @@
 #include "CircuitBuilder.h"
 
-
-
-CircuitBuilder& CircuitBuilder::addComponenet(int node1, int node2, std::unique_ptr<Component>component)
+CircuitBuilder::CircuitBuilder() :m_Circuit{std::make_unique<Circuit>()}
 {
-	m_Circuit->addComponent((node1, node2, std::move(component)));
+}
+
+CircuitBuilder& CircuitBuilder::addComponenet(std::unique_ptr<Component>component)
+{
+	m_Circuit->addComponent( std::move(component));
+
+	return *this;
 
 }
 

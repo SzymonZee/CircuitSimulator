@@ -2,19 +2,22 @@
 #include "Circuit.h"
 class SimulationBehaviour
 {
-   
-public:
-    virtual void parseNetlist(std::unique_ptr<Circuit>cirucit) ;
 
-    virtual ~SimulationBehaviour() = default;
-    virtual void setupEquations() = 0;
     void reportResults() const;
-    virtual void simulation() = 0;
+    /*
+ public:
+     virtual void parseNetlist(std::unique_ptr<Circuit>cirucit) ;
 
-private:
+     virtual ~SimulationBehaviour() = default;
+     virtual void setupEquations() = 0;
+     void reportResults() const;
+     virtual void simulation() = 0;
 
-    std::unique_ptr<Circuit>cirucit;
-    std::vector <double>nodeVoltage;
-    std::vector<double>branchCurrent;
+ private:
+
+     std::unique_ptr<Circuit>cirucit;
+     std::vector <double>nodeVoltage;
+     std::vector<double>branchCurrent;
+ };
+ */
 };
-

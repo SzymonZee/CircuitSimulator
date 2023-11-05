@@ -16,7 +16,7 @@ return this->m_ComponentNodes;
 std::vector<int> Component::setPostion(std::vector<int> node_numbers)
 {   
 	m_ComponentNodes = node_numbers;
-
+	return this->m_ComponentNodes;
 
 }
 

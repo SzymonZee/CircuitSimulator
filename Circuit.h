@@ -3,11 +3,11 @@
 #include <vector>
 #include <memory>
 #include <iostream>
-#include "boost/graph/adjacency_list.hpp"
-#include "SimulationBehaviour.h"
 
-class Circuit
-{
+
+
+
+/*
 	struct EdgeProperties
 	{
 		std::unique_ptr<Component>s_Component; // Pointer to the component this edge represents
@@ -19,21 +19,30 @@ class Circuit
 
 	CircuitGraph graph;
 	
-	std::map < std::pair<int, int>, std::unique_ptr<Component>>components;
+	std::map < std::pair<int, int>, Component>components;
 	std::map<int, graph::vertex_descriptor> vertexMap;
+	*/
+
+class Circuit
+{
+
+
+
+
 public:
  
 
-		void addComponent(int node1, int node2, std::unique_ptr<Component> component);
+		void addComponent( std::unique_ptr<Component> component);
 
-		void  DisplayNetlist();
+		//void  DisplayNetlist() const;
 
-		void performSimualtion( std::unique_ptr<SimulationBehaviour> m_simulation);
-		
+	//	void performSimualtion( std::unique_ptr<SimulationBehaviour> m_simulation);
+		//std::ostream &operator<< (std::ostream& os, const Circuit& circuit);
+		//std::vector < std::unique_ptr<Component>> getComponentVector()const;
 
-private:
 	
 	std::vector < std::unique_ptr<Component>> m_Components;
+	
 	
 
 };

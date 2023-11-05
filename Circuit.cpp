@@ -3,8 +3,18 @@
 
 
 
-void  Circuit::addComponent(int node1, int node2, std::unique_ptr<Component> component)
-{
+void  Circuit::addComponent( std::unique_ptr<Component> component)
+{ 
+    
+    
+    m_Components.push_back(std::move(component));
+    
+    
+    
+    
+    
+    
+    /*
     // Check if vertices for node1 and node2 already exist or create them
     Vertex v1 = add_vertex_if_not_exists(node1);
     Vertex v2 = add_vertex_if_not_exists(node2);
@@ -20,10 +30,28 @@ void  Circuit::addComponent(int node1, int node2, std::unique_ptr<Component> com
 
     // Use std::move to transfer ownership of the component to the edge properties
     graph[e].s_Component = std::move(component);
-}
 
+    */
+}
+/*
 void Circuit::performSimualtion(std::unique_ptr<SimulationBehaviour> m_simulation)
 {
     m_simulation->simulation();
 }
 
+void Circuit::DisplayNetlist() const
+{
+    auto map_iterator = components.begin();
+    for (map_iterator; map_iterator!= components.end();++map_iterator)
+    {
+       
+    }
+}
+
+std::ostream& Circuit::operator<<(std::ostream& os, const Circuit& circuit)
+{
+    os << circuit.DisplayNetlist();
+
+
+}
+*/

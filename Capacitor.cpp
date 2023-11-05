@@ -6,3 +6,8 @@ Capacitor::Capacitor(long capitance, std::vector<int>component_nodes) :Component
 {
 
 }
+
+void Capacitor::linarize(double operating_current)
+{
+
+}
