@@ -18,7 +18,7 @@ class Circuit
 public:
  
 
-		void addComponent( std::unique_ptr<Component> component);
+	std::unique_ptr<Component> addComponent( std::unique_ptr<Component> component);
 		bool  compareNodes(std::unique_ptr<Component>& component)const;
 
 		//delete after  overloading << operator in  Component class 
@@ -28,8 +28,8 @@ public:
 		void mapComponents(const std::vector<std::unique_ptr<Component>>& components);
 	
 		std::vector < std::unique_ptr<Component>> m_Components{};
-	void createTopology(const std::vector < std::unique_ptr<Component>>&components);
-	std::vector <std::vector<int >> m_Nodes;
+
+
 
 
 

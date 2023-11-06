@@ -7,15 +7,21 @@ class Resistor :
 
 {
 private:
-	typedef long reistance;
-	reistance m_Reistance;
-
+	typedef long resistance;
+	resistance m_Resistance;
+	static int m_ResistorCount;
+	std::string m_ResistorID;
 public:
 
-	Resistor(reistance resitance);
-	reistance getResitance();
-	void setResitance(reistance resitance);
+	
+	Resistor(resistance resistance);
+	resistance getResistance() const;
+	void setResistance(resistance resistance);
+	std::string getResistorID()const;
 	void linarize(double operating_current) override;
+	void getComponentID() const override;
+
+	
 	
 
 

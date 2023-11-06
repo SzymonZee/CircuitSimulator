@@ -4,8 +4,8 @@
 
 Component::Component()
 {
-    std::vector<int> component_nodes = this->inputTwoIntegers();
-       this-> setPosition(component_nodes);
+    std::vector<int> componentNodes = this->inputTwoIntegers();
+       this-> setPosition(componentNodes);
 }
 
 
@@ -15,7 +15,8 @@ return this->m_ComponentNodes;
 }
 
 
-std::vector<int> Component::inputTwoIntegers() {
+std::vector<int> Component::inputTwoIntegers() 
+{
     int input;
     std::vector<int> tempVec;
 
@@ -51,7 +52,8 @@ std::vector<int> Component::inputTwoIntegers() {
 }
 
 // Function to set the position of the component
-void  Component::setPosition(const std::vector<int>& node_numbers) {
+void  Component::setPosition(const std::vector<int>& node_numbers) 
+{
     if (node_numbers.size() == 2) {
         m_ComponentNodes = node_numbers;
     }
@@ -60,7 +62,10 @@ void  Component::setPosition(const std::vector<int>& node_numbers) {
         throw std::invalid_argument("Two integers are required.");
     }
 
+}
 
+std::vector<int> Component::getComponentNodes()const
+{
 
-   
+    return this->m_ComponentNodes;
 }

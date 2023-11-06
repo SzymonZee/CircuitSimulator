@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include <iostream>
+#include <string>
 class Component
 {
 public:
@@ -11,22 +12,13 @@ public:
 	virtual void linarize(double operating_current) = 0;
 
 	bool operator==(const Component&rhs)const
-	{
-	//overloaded operator checks if provided node number has the same  two numbers
-
-
-		return this->m_ComponentNodes.at(0) == rhs.m_ComponentNodes[0] && this->m_ComponentNodes[1] == rhs.m_ComponentNodes[0];
-		
+	{ //operator used to check  Component nodes beetwen two objects
+		return this->m_ComponentNodes.at(0) == rhs.m_ComponentNodes[0] && this->m_ComponentNodes[1] == rhs.m_ComponentNodes[1];
 	}
 
 	std::vector<int> inputTwoIntegers();
-	/// <summary>
-	/// to do overload << operator 
-	/// </summary> virtual   ofstream& operator<<(ofstream& out) = 0;
-	/// <param name="out"></param>
-	/// <returns></returns>
-	
-
+	virtual void getComponentID() const = 0;
+	std::vector<int> getComponentNodes()const ;
 private:
 
 	

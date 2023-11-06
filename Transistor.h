@@ -5,6 +5,7 @@ class Transistor :
 {
 
     void linarize(double operating_current) override;
+    void getComponentID() const override {};
     Transistor(std::vector<int> component_nodes, double beta, double Is, double m, double cbe, double cbc, double Vt = 0.026);
 private:
 

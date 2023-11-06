@@ -1,25 +1,39 @@
 #include "Resistor.h"
 
 
-
+int Resistor::m_ResistorCount = 0;
 
 void Resistor::linarize(double operating_current)
 {
 
 }
 
-Resistor::Resistor(reistance resitance) :Component(), m_Reistance{resitance}
+Resistor::Resistor(resistance resitance) :Component(), m_Resistance{resitance}
 {
+	++m_ResistorCount;
+	this->m_ResistorID = "Resistor R" + std::to_string(m_ResistorCount);
+}
+
+Resistor::resistance Resistor::getResistance()const
+{
+	return this->m_Resistance;
 
 }
 
-Resistor::reistance Resistor::getResitance()
+void Resistor::setResistance(resistance resistance)
 {
-	return this->m_Reistance;
-
+	this->m_Resistance = resistance;
 }
 
-void Resistor::setResitance(reistance resitance)
+
+std::string Resistor::getResistorID()const
 {
-	this->m_Reistance = resitance;
+	return this->m_ResistorID;
+}
+void Resistor::getComponentID() const
+{
+	std::cout << this->getResistorID()<<std::endl;
+	std::vector<int>vecNodes=this->getComponentNodes();
+	std::cout << "Nodes:" << vecNodes[0] <<" " << vecNodes[1] << std::endl;
+	std::cout << "Resitance:" << this->getResistance();
 }

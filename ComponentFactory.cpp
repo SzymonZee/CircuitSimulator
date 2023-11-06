@@ -8,35 +8,20 @@ std::unique_ptr<Component> ComponentFactory::makeComponent(const std::string cho
 	{
 		std::cout << "Pass inizalization values for Resistor \t" << std::endl;
 		std::cout << "1.resitance:" << std::endl;
-		long Resitance{};
-		std::cin >> Resitance;
-		std::cout << "2.vector nodes numbers:" << std::endl;
-		std::cout << "2.1 First node number:" << std::endl;
-		int FirstNode{};
-		std::cin >> FirstNode;
-		std::cout << "2.2 Second node number:"<<std::endl;
-		int SecondNode{};
-		std::cin >> SecondNode;
-		std::vector<int> NodeNumbers{ FirstNode, SecondNode };
-		return std::make_unique<Resistor>(Resitance);
+		long resitance{};
+		std::cin >> resitance;
+		
+		return std::make_unique<Resistor>(resitance);
 	}
 
 	if (choice == "Capacitor")
 	{
 		std::cout << "Pass inizalization values for Capacitor \t";
 		std::cout << "1.Capitance:";
-		long Capitance{};
-		std::cin >> Capitance;
-		std::cout << "2.vector nodes numbers:";
-		std::cout << "2.1 First node number:";
-		int FirstNode{};
-		std::cin >> FirstNode;
-		std::cout << "2.2 Second node number:";
-		int SecondNode{};
-		std::cin >> SecondNode;
-		std::vector<int> NodeNumbers{ FirstNode, SecondNode };
+		long capitance{};
+		std::cin >> capitance;
 
-		return std::make_unique<Capacitor>(Capitance);
+		return std::make_unique<Capacitor>(capitance);
 	}
 
 

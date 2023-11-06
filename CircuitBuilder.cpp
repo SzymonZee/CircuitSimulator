@@ -6,7 +6,7 @@ CircuitBuilder::CircuitBuilder() :m_Circuit{std::make_unique<Circuit>()}
 
 CircuitBuilder& CircuitBuilder::addComponenet(std::unique_ptr<Component>component)
 {
-	m_Circuit->addComponent( std::move(component));
+	this->m_Circuit->m_Components.push_back(m_Circuit->addComponent( std::move(component)));
 
 	return *this;
 

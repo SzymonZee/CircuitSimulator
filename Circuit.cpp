@@ -3,14 +3,19 @@
 
 
 
-void  Circuit::addComponent(std::unique_ptr<Component> component)
-{//function which checks if  componet wich we want to  pass to a vector  is valid meaining  it does not have same node cordinates
+std::unique_ptr<Component>  Circuit::addComponent(std::unique_ptr<Component> component)
+{//function which checks if  componet which we want to  pass to a vector  is valid meaining  it does not have same node cordinates
     while (compareNodes(component) != true)
     {
         this->nodesDisplay();
         component->setPosition(component->inputTwoIntegers());
     }
+
+    return std::move(component);
+
+
 }
+
 
 
 
@@ -24,7 +29,12 @@ bool Circuit::compareNodes(std::unique_ptr<Component>& component)const
             ++count;
         }
     }
-    return count == 0; // returns true if no matches were found
+    
+    if (count != 0)
+    {
+        return false;
+    }
+    else return true;
 }
 
 
@@ -86,7 +96,7 @@ std::ostream& Circuit::operator<<(std::ostream& os, const Circuit& circuit)
 */
 
 
-
+/*
 void Circuit::createTopology(const std::vector<std::unique_ptr<Component>>& components) {
     // Assuming that m_Nodes is initially empty or correctly sized to match the number of components.
     m_Nodes.resize(components.size());  // Ensure we have enough vectors to match components
@@ -112,7 +122,7 @@ void Circuit::createTopology(const std::vector<std::unique_ptr<Component>>& comp
     }
 }
 
-
+*/
 void Circuit::mapComponents(const std::vector<std::unique_ptr<Component>>& components)
 {
     /*

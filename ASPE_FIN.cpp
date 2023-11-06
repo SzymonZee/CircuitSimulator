@@ -8,14 +8,26 @@ int main()
 {
     ComponentFactory C1{};
     std::string choice{};
-    std::cout << "Wybierz Komponent";
+    std::cout << "Wybierz Komponent:";
     std::cin >> choice;
    auto component= std::move(C1.makeComponent(choice));
+   std::string choice_{};
+   std::cout << "Wybierz Komponent:";
+   std::cin >> choice_;
+   auto component_ = std::move(C1.makeComponent(choice_));
+   std::string choice__{};
+   std::cout << "Wybierz Komponent:";
+   std::cin >> choice__;
    CircuitBuilder circuitbuilder;
-   //sprawdzenie dodawania elemntów do wektora
-   auto component_ = std::move(C1.makeComponent(choice));
-   auto circuit = circuitbuilder.addComponenet(std::move(component)).addComponenet(std::move(component_)).buildCircuit();
-  
+   auto component__ = std::move(C1.makeComponent(choice__));
+
+   auto circuit = circuitbuilder.addComponenet(std::move(component)).addComponenet(std::move(component_)).addComponenet(std::move(component__)).buildCircuit();
+   std::cout << "Node list:" << std ::endl;
+   for (const auto& compPtr : circuit->m_Components)
+   {
+       compPtr->getComponentID();
+       std::cout << std::endl;
+   }
 }
 
 // Uruchomienie programu: Ctrl + F5 lub menu Debugowanie > Uruchom bez debugowania
