@@ -131,7 +131,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ACSimulation.cpp" />
-    <ClCompile Include="ASPE_FIN.cpp" />
+    <ClCompile Include="ASPE_FIN.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\48532\Desktop\Softwear_Developer_Jurney\C++\Libs\armadillo-12.6.6\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
     <ClCompile Include="Capacitor.cpp" />
     <ClCompile Include="Circuit.cpp" />
     <ClCompile Include="CircuitBuilder.cpp" />

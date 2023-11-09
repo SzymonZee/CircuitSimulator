@@ -3,6 +3,14 @@
 
 
 
+
+/// <summary>
+/// Funkjc fajna zwraca nam komponent  teraz soboie zamias pchac go jak czub znów do weetora
+/// wsadzimy je do mapy !
+/// 
+/// </summary>
+/// <param name="component"></param>
+/// <returns></returns>
 std::unique_ptr<Component>  Circuit::addComponent(std::unique_ptr<Component> component)
 {//function which checks if  componet which we want to  pass to a vector  is valid meaining  it does not have same node cordinates
     while (compareNodes(component) != true)
@@ -36,6 +44,7 @@ bool Circuit::compareNodes(std::unique_ptr<Component>& component)const
     }
     else return true;
 }
+
 
 
 // Displaying  nodes of componets aggrageted in cicrcuit
@@ -123,10 +132,13 @@ void Circuit::createTopology(const std::vector<std::unique_ptr<Component>>& comp
 }
 
 */
-void Circuit::mapComponents(const std::vector<std::unique_ptr<Component>>& components)
+/*
+void Circuit::mapComponents()
 {
-    /*
-    auto iterator = components.begin();
-    for (auto& )
-    */
+    for (const auto& compPtr : this->m_Components)
+    {
+        this->m_componntsMap.insert(std::make_pair(compPtr->getComponentNodes(), std::move(m_Components)));
+
+    }
 }
+*/

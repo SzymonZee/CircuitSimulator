@@ -25,12 +25,17 @@ public:
 		void nodesDisplay() const;
 
 		 
-		void mapComponents(const std::vector<std::unique_ptr<Component>>& components);
+		//void mapComponents();
+
+
+		
+
 	
 		std::vector < std::unique_ptr<Component>> m_Components{};
+		//std::map<std::vector<int>, std::unique_ptr<Component>,> m_Components_map;
 
 
-
+		
 
 
 };

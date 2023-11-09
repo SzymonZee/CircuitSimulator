@@ -1,5 +1,6 @@
 #pragma once
 #include "Circuit.h"
+#include <algorithm>
 class CircuitBuilder
 {
 
@@ -11,6 +12,7 @@ public:
 	CircuitBuilder& addComponenet( std::unique_ptr<Component>component);
 
 	std::unique_ptr<Circuit> buildCircuit();
+	
 
 };
 

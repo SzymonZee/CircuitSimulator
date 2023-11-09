@@ -8,7 +8,7 @@ MathematicalSolvers::MathematicalSolvers() :m_Circuit{ std::make_unique<Circuit>
 }
 
 
-MathematicalSolvers::OperatingPoint  NewtonRaphsonMethod(int max_iter, float inital_guess, double tolerance)
+MathematicalSolvers::OperatingPoint  MathematicalSolvers::NewtonRaphsonMethod(int max_iter, float inital_guess, double tolerance)
 {
 
 

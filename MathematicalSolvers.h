@@ -11,7 +11,7 @@ public:
 	
   OperatingPoint getDCpoint();
 
-  OperatingPoint  NewtonRaphsonMethod(int max_iter, float inital_guess);
+  OperatingPoint  NewtonRaphsonMethod(int max_iter, float inital_guess, double tolerance);
 
 private:
 	std::unique_ptr<Circuit> m_Circuit;
